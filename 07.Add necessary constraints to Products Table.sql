@@ -18,3 +18,22 @@ ALTER TABLE Production.Products
 ADD  CONSTRAINT CK_StockQty CHECK ((StockQty>=(0)));
 GO
 
+-------Test
+SELECT * FROM Production.ProductCategory
+
+SELECT * FROM Production.Products
+GO
+
+--Test 1
+INSERT INTO Production.Products
+(ProductName,StockQty,CategoryID)
+VALUES
+	('Bike Wash - Dissolver',36,5)
+GO
+
+--Test 2
+INSERT INTO Production.Products
+(ProductName,StockQty,CategoryID)
+VALUES
+	('Bike Wash - Dissolver',-36,4)
+GO

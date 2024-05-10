@@ -1,6 +1,12 @@
 USE TestDB
 GO
 
+DELETE Production.Products;
+GO
+
+DBCC CHECKIDENT('Production.Products',RESEED,0)
+GO
+
 INSERT INTO Production.Products
 (ProductName,StockQty,CategoryID)
 VALUES
@@ -14,7 +20,4 @@ VALUES
 ,	('Mountain Tire Tube',15,4)
 GO
 
-
-
-
-
+SELECT * FROM Production.Products;
